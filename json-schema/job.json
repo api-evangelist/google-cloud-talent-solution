@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/json-schema/job.json",
+  "title": "Job",
+  "description": "A job posting resource in Google Cloud Talent Solution representing an employment opportunity.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Resource name of the job, in the format projects/{projectId}/tenants/{tenantId}/jobs/{jobId}."
+    },
+    "company": {
+      "type": "string",
+      "description": "Resource name of the company listing the job."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the job, such as Software Engineer."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the job in HTML format."
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Addresses where the job is located."
+    },
+    "employmentTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "EMPLOYMENT_TYPE_UNSPECIFIED",
+          "FULL_TIME",
+          "PART_TIME",
+          "CONTRACTOR",
+          "CONTRACT_TO_HIRE",
+          "TEMPORARY",
+          "INTERN",
+          "VOLUNTEER",
+          "PER_DIEM",
+          "OTHER"
+        ]
+      },
+      "description": "The employment type(s) of the job."
+    },
+    "compensationInfo": {
+      "type": "object",
+      "description": "Job compensation information.",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Compensation type."
+              },
+              "unit": {
+                "type": "string",
+                "description": "Frequency of the compensation."
+              },
+              "amount": {
+                "type": "object",
+                "properties": {
+                  "currencyCode": {
+                    "type": "string"
+                  },
+                  "units": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "qualifications": {
+      "type": "string",
+      "description": "A description of job qualifications."
+    },
+    "responsibilities": {
+      "type": "string",
+      "description": "A description of job responsibilities."
+    },
+    "postingRegion": {
+      "type": "string",
+      "description": "The job posting region."
+    },
+    "postingExpireTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the job posting expires."
+    },
+    "postingCreateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the job posting was created."
+    },
+    "postingUpdateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the job posting was last updated."
+    },
+    "languageCode": {
+      "type": "string",
+      "description": "The language of the posting, such as en-US."
+    }
+  },
+  "required": ["company", "title", "description"]
+}

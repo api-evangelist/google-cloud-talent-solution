@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/solutions/talent-solution/docs/reference/rest/v4/",
+    "Job": "gcloud:projects.tenants.jobs",
+    "Company": "gcloud:projects.tenants.companies",
+    "Tenant": "gcloud:projects.tenants",
+    "name": "https://schema.org/name",
+    "title": "https://schema.org/jobTitle",
+    "description": "https://schema.org/description",
+    "company": {
+      "@id": "https://schema.org/hiringOrganization",
+      "@type": "@id"
+    },
+    "addresses": "https://schema.org/jobLocation",
+    "employmentTypes": "https://schema.org/employmentType",
+    "compensationInfo": "https://schema.org/baseSalary",
+    "postingExpireTime": "https://schema.org/validThrough",
+    "postingCreateTime": "https://schema.org/datePosted",
+    "qualifications": "https://schema.org/qualifications",
+    "responsibilities": "https://schema.org/responsibilities",
+    "websiteUri": "https://schema.org/url",
+    "displayName": "https://schema.org/legalName"
+  }
+}
