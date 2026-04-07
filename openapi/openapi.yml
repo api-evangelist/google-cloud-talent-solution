@@ -483,3 +483,7 @@ components:
           scopes:
             https://www.googleapis.com/auth/jobs: Manage job listings
             https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+tags:
+  - name: Companies
+  - name: Jobs
+  - name: Tenants
