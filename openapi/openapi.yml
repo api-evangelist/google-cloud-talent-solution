@@ -16,7 +16,7 @@ paths:
   /projects/{projectId}/tenants:
     get:
       operationId: listTenants
-      summary: List tenants
+      summary: Google Cloud Talent Solution List tenants
       description: Lists all tenants associated with the project.
       tags:
         - Tenants
@@ -40,7 +40,7 @@ paths:
                       $ref: '#/components/schemas/Tenant'
     post:
       operationId: createTenant
-      summary: Create a tenant
+      summary: Google Cloud Talent Solution Create a tenant
       description: Creates a new tenant within the project.
       tags:
         - Tenants
@@ -66,7 +66,7 @@ paths:
   /projects/{projectId}/tenants/{tenantId}:
     get:
       operationId: getTenant
-      summary: Get a tenant
+      summary: Google Cloud Talent Solution Get a tenant
       description: Retrieves a specific tenant by ID.
       tags:
         - Tenants
@@ -90,7 +90,7 @@ paths:
                 $ref: '#/components/schemas/Tenant'
     delete:
       operationId: deleteTenant
-      summary: Delete a tenant
+      summary: Google Cloud Talent Solution Delete a tenant
       description: Deletes a specific tenant.
       tags:
         - Tenants
@@ -111,7 +111,7 @@ paths:
   /projects/{projectId}/tenants/{tenantId}/companies:
     get:
       operationId: listCompanies
-      summary: List companies
+      summary: Google Cloud Talent Solution List companies
       description: Lists all companies associated with a tenant.
       tags:
         - Companies
@@ -140,7 +140,7 @@ paths:
                       $ref: '#/components/schemas/Company'
     post:
       operationId: createCompany
-      summary: Create a company
+      summary: Google Cloud Talent Solution Create a company
       description: Creates a new company within a tenant.
       tags:
         - Companies
@@ -171,7 +171,7 @@ paths:
   /projects/{projectId}/tenants/{tenantId}/jobs:
     get:
       operationId: listJobs
-      summary: List jobs
+      summary: Google Cloud Talent Solution List jobs
       description: Lists jobs within a tenant.
       tags:
         - Jobs
@@ -200,7 +200,7 @@ paths:
                       $ref: '#/components/schemas/Job'
     post:
       operationId: createJob
-      summary: Create a job
+      summary: Google Cloud Talent Solution Create a job
       description: Creates a new job posting within a tenant.
       tags:
         - Jobs
@@ -231,7 +231,7 @@ paths:
   /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}:
     get:
       operationId: getJob
-      summary: Get a job
+      summary: Google Cloud Talent Solution Get a job
       description: Retrieves a specific job posting by ID.
       tags:
         - Jobs
@@ -260,7 +260,7 @@ paths:
                 $ref: '#/components/schemas/Job'
     patch:
       operationId: updateJob
-      summary: Update a job
+      summary: Google Cloud Talent Solution Update a job
       description: Updates an existing job posting.
       tags:
         - Jobs
@@ -295,7 +295,7 @@ paths:
                 $ref: '#/components/schemas/Job'
     delete:
       operationId: deleteJob
-      summary: Delete a job
+      summary: Google Cloud Talent Solution Delete a job
       description: Deletes a specific job posting.
       tags:
         - Jobs
@@ -321,7 +321,7 @@ paths:
   /projects/{projectId}/tenants/{tenantId}/jobs:search:
     post:
       operationId: searchJobs
-      summary: Search jobs
+      summary: Google Cloud Talent Solution Search jobs
       description: Searches for jobs using filters and query parameters.
       tags:
         - Jobs
