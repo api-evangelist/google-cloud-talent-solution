@@ -1,0 +1,691 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Talent Solution API
+  description: The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration
+    for building intelligent talent acquisition applications powered by machine learning.
+  tags:
+  - Google
+  - Cloud
+  - Talent
+  - Solution
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-talent-solution
+    baseUri: https://jobs.googleapis.com/v4
+    description: Google Cloud Talent Solution API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_TALENT_SOLUTION_TOKEN}}'
+    resources:
+    - name: projects-projectid-tenants
+      path: /projects/{projectId}/tenants
+      operations:
+      - name: listtenants
+        method: GET
+        description: Google Cloud Talent Solution List tenants
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtenant
+        method: POST
+        description: Google Cloud Talent Solution Create a tenant
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-tenants-tenantid
+      path: /projects/{projectId}/tenants/{tenantId}
+      operations:
+      - name: gettenant
+        method: GET
+        description: Google Cloud Talent Solution Get a tenant
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletetenant
+        method: DELETE
+        description: Google Cloud Talent Solution Delete a tenant
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-tenants-tenantid-companies
+      path: /projects/{projectId}/tenants/{tenantId}/companies
+      operations:
+      - name: listcompanies
+        method: GET
+        description: Google Cloud Talent Solution List companies
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcompany
+        method: POST
+        description: Google Cloud Talent Solution Create a company
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-tenants-tenantid-jobs
+      path: /projects/{projectId}/tenants/{tenantId}/jobs
+      operations:
+      - name: listjobs
+        method: GET
+        description: Google Cloud Talent Solution List jobs
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createjob
+        method: POST
+        description: Google Cloud Talent Solution Create a job
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-tenants-tenantid-jobs-jobid
+      path: /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Google Cloud Talent Solution Get a job
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatejob
+        method: PATCH
+        description: Google Cloud Talent Solution Update a job
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletejob
+        method: DELETE
+        description: Google Cloud Talent Solution Delete a job
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-tenants-tenantid-jobs-search
+      path: /projects/{projectId}/tenants/{tenantId}/jobs:search
+      operations:
+      - name: searchjobs
+        method: POST
+        description: Google Cloud Talent Solution Search jobs
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-talent-solution-rest
+    description: REST adapter for Google Cloud Talent Solution API.
+    resources:
+    - path: /projects/{projectId}/tenants
+      name: listtenants
+      operations:
+      - method: GET
+        name: listtenants
+        description: Google Cloud Talent Solution List tenants
+        call: google-cloud-talent-solution.listtenants
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants
+      name: createtenant
+      operations:
+      - method: POST
+        name: createtenant
+        description: Google Cloud Talent Solution Create a tenant
+        call: google-cloud-talent-solution.createtenant
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}
+      name: gettenant
+      operations:
+      - method: GET
+        name: gettenant
+        description: Google Cloud Talent Solution Get a tenant
+        call: google-cloud-talent-solution.gettenant
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}
+      name: deletetenant
+      operations:
+      - method: DELETE
+        name: deletetenant
+        description: Google Cloud Talent Solution Delete a tenant
+        call: google-cloud-talent-solution.deletetenant
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/companies
+      name: listcompanies
+      operations:
+      - method: GET
+        name: listcompanies
+        description: Google Cloud Talent Solution List companies
+        call: google-cloud-talent-solution.listcompanies
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/companies
+      name: createcompany
+      operations:
+      - method: POST
+        name: createcompany
+        description: Google Cloud Talent Solution Create a company
+        call: google-cloud-talent-solution.createcompany
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs
+      name: listjobs
+      operations:
+      - method: GET
+        name: listjobs
+        description: Google Cloud Talent Solution List jobs
+        call: google-cloud-talent-solution.listjobs
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs
+      name: createjob
+      operations:
+      - method: POST
+        name: createjob
+        description: Google Cloud Talent Solution Create a job
+        call: google-cloud-talent-solution.createjob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}
+      name: getjob
+      operations:
+      - method: GET
+        name: getjob
+        description: Google Cloud Talent Solution Get a job
+        call: google-cloud-talent-solution.getjob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}
+      name: updatejob
+      operations:
+      - method: PATCH
+        name: updatejob
+        description: Google Cloud Talent Solution Update a job
+        call: google-cloud-talent-solution.updatejob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}
+      name: deletejob
+      operations:
+      - method: DELETE
+        name: deletejob
+        description: Google Cloud Talent Solution Delete a job
+        call: google-cloud-talent-solution.deletejob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/tenants/{tenantId}/jobs:search
+      name: searchjobs
+      operations:
+      - method: POST
+        name: searchjobs
+        description: Google Cloud Talent Solution Search jobs
+        call: google-cloud-talent-solution.searchjobs
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-talent-solution-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Talent Solution API for AI agent use.
+    tools:
+    - name: listtenants
+      description: Google Cloud Talent Solution List tenants
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-talent-solution.listtenants
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createtenant
+      description: Google Cloud Talent Solution Create a tenant
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-talent-solution.createtenant
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettenant
+      description: Google Cloud Talent Solution Get a tenant
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-talent-solution.gettenant
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletetenant
+      description: Google Cloud Talent Solution Delete a tenant
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-talent-solution.deletetenant
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcompanies
+      description: Google Cloud Talent Solution List companies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-talent-solution.listcompanies
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcompany
+      description: Google Cloud Talent Solution Create a company
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-talent-solution.createcompany
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listjobs
+      description: Google Cloud Talent Solution List jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-talent-solution.listjobs
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createjob
+      description: Google Cloud Talent Solution Create a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-talent-solution.createjob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getjob
+      description: Google Cloud Talent Solution Get a job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-talent-solution.getjob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatejob
+      description: Google Cloud Talent Solution Update a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-talent-solution.updatejob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletejob
+      description: Google Cloud Talent Solution Delete a job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-talent-solution.deletejob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchjobs
+      description: Google Cloud Talent Solution Search jobs
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-talent-solution.searchjobs
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: tenantId
+        type: string
+        description: tenantId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_TALENT_SOLUTION_TOKEN: GOOGLE_CLOUD_TALENT_SOLUTION_TOKEN
