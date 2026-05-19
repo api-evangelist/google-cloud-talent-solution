@@ -1,0 +1,338 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Talent Solution API — Jobs
+  description: 'Google Cloud Talent Solution API — Jobs. 6 operations. Lead operation: Google Cloud Talent Solution List jobs.
+    Self-contained Naftiko capability covering one Google Cloud Talent Solution business surface.'
+  tags:
+  - Google Cloud Talent Solution
+  - Jobs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_TALENT_SOLUTION_API_KEY: GOOGLE_CLOUD_TALENT_SOLUTION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-jobs
+    baseUri: https://jobs.googleapis.com/v4
+    description: Google Cloud Talent Solution API — Jobs business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-tenants-tenantId-jobs
+      path: /projects/{projectId}/tenants/{tenantId}/jobs
+      operations:
+      - name: listjobs
+        method: GET
+        description: Google Cloud Talent Solution List jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+      - name: createjob
+        method: POST
+        description: Google Cloud Talent Solution Create a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-tenants-tenantId-jobs-jobId
+      path: /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Google Cloud Talent Solution Get a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+      - name: updatejob
+        method: PATCH
+        description: Google Cloud Talent Solution Update a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletejob
+        method: DELETE
+        description: Google Cloud Talent Solution Delete a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+    - name: projects-projectId-tenants-tenantId-jobs:search
+      path: /projects/{projectId}/tenants/{tenantId}/jobs:search
+      operations:
+      - name: searchjobs
+        method: POST
+        description: Google Cloud Talent Solution Search jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: tenantId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_TALENT_SOLUTION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-jobs-rest
+    port: 8080
+    description: REST adapter for Google Cloud Talent Solution API — Jobs. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/tenants/{tenantid}/jobs
+      name: projects-projectid-tenants-tenantid-jobs
+      description: REST surface for projects-projectId-tenants-tenantId-jobs.
+      operations:
+      - method: GET
+        name: listjobs
+        description: Google Cloud Talent Solution List jobs
+        call: openapi-jobs.listjobs
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createjob
+        description: Google Cloud Talent Solution Create a job
+        call: openapi-jobs.createjob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/tenants/{tenantid}/jobs/{jobid}
+      name: projects-projectid-tenants-tenantid-jobs-jobid
+      description: REST surface for projects-projectId-tenants-tenantId-jobs-jobId.
+      operations:
+      - method: GET
+        name: getjob
+        description: Google Cloud Talent Solution Get a job
+        call: openapi-jobs.getjob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatejob
+        description: Google Cloud Talent Solution Update a job
+        call: openapi-jobs.updatejob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletejob
+        description: Google Cloud Talent Solution Delete a job
+        call: openapi-jobs.deletejob
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/tenants/{tenantid}/jobs-search
+      name: projects-projectid-tenants-tenantid-jobs-search
+      description: REST surface for projects-projectId-tenants-tenantId-jobs:search.
+      operations:
+      - method: POST
+        name: searchjobs
+        description: Google Cloud Talent Solution Search jobs
+        call: openapi-jobs.searchjobs
+        with:
+          projectId: rest.projectId
+          tenantId: rest.tenantId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-jobs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Talent Solution API — Jobs. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-talent-solution-list
+      description: Google Cloud Talent Solution List jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-jobs.listjobs
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-talent-solution-create
+      description: Google Cloud Talent Solution Create a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-jobs.createjob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-talent-solution-get
+      description: Google Cloud Talent Solution Get a job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-jobs.getjob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-talent-solution-update
+      description: Google Cloud Talent Solution Update a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-jobs.updatejob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-talent-solution-delete
+      description: Google Cloud Talent Solution Delete a job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-jobs.deletejob
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-talent-solution-search
+      description: Google Cloud Talent Solution Search jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-jobs.searchjobs
+      with:
+        projectId: tools.projectId
+        tenantId: tools.tenantId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
