@@ -8,47 +8,49 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.18'
 tags:
-- Google Cloud
-- Jobs
-- Machine Learning
-- Recruitment
-- Search
-- Talent
-apis:
-- name: Google Cloud Talent Solution API
-  description: The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant administration
-    for building intelligent talent acquisition applications.
-  humanURL: https://cloud.google.com/solutions/talent-solution
-  baseURL: https://jobs.googleapis.com
-  tags:
+  - Google Cloud
   - Jobs
+  - Machine Learning
   - Recruitment
   - Search
   - Talent
-  properties:
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: JSONSchema
-    url: json-schema/job.json
+apis:
+  - name: Google Cloud Talent Solution API
+    description: The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant administration
+      for building intelligent talent acquisition applications.
+    humanURL: https://cloud.google.com/solutions/talent-solution
+    baseURL: https://jobs.googleapis.com
+    tags:
+    - Jobs
+    - Recruitment
+    - Search
+    - Talent
+    properties:
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: JSONSchema
+      url: json-schema/job.json
+    - type: JSONLDContext
+      url: json-ld/context.jsonld
+    - type: NaftikoCapability
+      url: capabilities/openapi-companies.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-jobs.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-tenants.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/googleapis
+  - type: GettingStarted
+    url: https://cloud.google.com/solutions/talent-solution/docs
+  - type: Pricing
+    url: https://cloud.google.com/solutions/talent-solution/pricing
   - type: JSONLDContext
     url: json-ld/context.jsonld
-  - type: NaftikoCapability
-    url: capabilities/openapi-companies.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-jobs.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-tenants.yaml
-common:
-- type: GettingStarted
-  url: https://cloud.google.com/solutions/talent-solution/docs
-- type: Pricing
-  url: https://cloud.google.com/solutions/talent-solution/pricing
-- type: JSONLDContext
-  url: json-ld/context.jsonld
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
