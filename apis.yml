@@ -1,7 +1,8 @@
 name: Google Cloud Talent Solution
-description: Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning
-  to match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and intelligent
-  job recommendations for enterprises and job boards.
+description: >-
+  Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning to
+  match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and
+  intelligent job recommendations for enterprises and job boards.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/apis.yml
 created: '2026-03-13'
@@ -16,28 +17,23 @@ tags:
   - Talent
 apis:
   - name: Google Cloud Talent Solution API
-    description: The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant administration
-      for building intelligent talent acquisition applications.
+    description: >-
+      The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant
+      administration for building intelligent talent acquisition applications.
     humanURL: https://cloud.google.com/solutions/talent-solution
     baseURL: https://jobs.googleapis.com
     tags:
-    - Jobs
-    - Recruitment
-    - Search
-    - Talent
+      - Jobs
+      - Recruitment
+      - Search
+      - Talent
     properties:
-    - type: OpenAPI
-      url: openapi/openapi.yml
-    - type: JSONSchema
-      url: json-schema/job.json
-    - type: JSONLDContext
-      url: json-ld/context.jsonld
-    - type: NaftikoCapability
-      url: capabilities/openapi-companies.yaml
-    - type: NaftikoCapability
-      url: capabilities/openapi-jobs.yaml
-    - type: NaftikoCapability
-      url: capabilities/openapi-tenants.yaml
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: JSONSchema
+        url: json-schema/job.json
+      - type: JSONLDContext
+        url: json-ld/context.jsonld
 common:
   - type: GitHubOrganization
     url: https://github.com/googleapis
