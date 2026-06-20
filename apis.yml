@@ -3,7 +3,7 @@ description: >-
   Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning to
   match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and
   intelligent job recommendations for enterprises and job boards.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
