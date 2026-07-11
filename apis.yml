@@ -35,6 +35,12 @@ apis:
       - type: JSONLDContext
         url: json-ld/context.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-talent-solution-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-talent-solution-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-talent-solution-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-talent-solution-scopes.yml
   - type: GitHubOrganization
