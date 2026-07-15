@@ -35,6 +35,8 @@ apis:
       - type: JSONLDContext
         url: json-ld/context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-talent-solution-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-talent-solution-vulnerability-disclosure.yml
   - type: DomainSecurity
