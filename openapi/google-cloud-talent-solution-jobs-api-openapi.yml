@@ -1,0 +1,291 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Talent Solution Companies Jobs API
+  description: The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications powered by machine learning.
+  version: 4.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/solutions/talent-solution
+servers:
+- url: https://jobs.googleapis.com/v4
+  description: Google Cloud Talent Solution Production
+tags:
+- name: Jobs
+paths:
+  /projects/{projectId}/tenants/{tenantId}/jobs:
+    get:
+      operationId: listJobs
+      summary: Google Cloud Talent Solution List jobs
+      description: Lists jobs within a tenant.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Job'
+    post:
+      operationId: createJob
+      summary: Google Cloud Talent Solution Create a job
+      description: Creates a new job posting within a tenant.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /projects/{projectId}/tenants/{tenantId}/jobs/{jobId}:
+    get:
+      operationId: getJob
+      summary: Google Cloud Talent Solution Get a job
+      description: Retrieves a specific job posting by ID.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+    patch:
+      operationId: updateJob
+      summary: Google Cloud Talent Solution Update a job
+      description: Updates an existing job posting.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+    delete:
+      operationId: deleteJob
+      summary: Google Cloud Talent Solution Delete a job
+      description: Deletes a specific job posting.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /projects/{projectId}/tenants/{tenantId}/jobs:search:
+    post:
+      operationId: searchJobs
+      summary: Google Cloud Talent Solution Search jobs
+      description: Searches for jobs using filters and query parameters.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                locationFilters:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      distanceInMiles:
+                        type: number
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  matchingJobs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        job:
+                          $ref: '#/components/schemas/Job'
+                        jobSummary:
+                          type: string
+components:
+  schemas:
+    Job:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the job.
+        company:
+          type: string
+          description: Resource name of the company listing the job.
+        title:
+          type: string
+          description: Title of the job.
+        description:
+          type: string
+          description: Description of the job.
+        addresses:
+          type: array
+          items:
+            type: string
+          description: Addresses where the job is located.
+        employmentTypes:
+          type: array
+          items:
+            type: string
+            enum:
+            - EMPLOYMENT_TYPE_UNSPECIFIED
+            - FULL_TIME
+            - PART_TIME
+            - CONTRACTOR
+            - CONTRACT_TO_HIRE
+            - TEMPORARY
+            - INTERN
+            - VOLUNTEER
+            - PER_DIEM
+            - OTHER
+        compensationInfo:
+          type: object
+          properties:
+            entries:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  unit:
+                    type: string
+                  amount:
+                    type: object
+                    properties:
+                      currencyCode:
+                        type: string
+                      units:
+                        type: string
+        postingExpireTime:
+          type: string
+          format: date-time
+          description: Timestamp when the job posting expires.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/jobs: Manage job listings
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

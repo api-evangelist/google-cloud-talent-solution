@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Talent Solution Companies Tenants API
+  description: The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications powered by machine learning.
+  version: 4.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/solutions/talent-solution
+servers:
+- url: https://jobs.googleapis.com/v4
+  description: Google Cloud Talent Solution Production
+tags:
+- name: Tenants
+paths:
+  /projects/{projectId}/tenants:
+    get:
+      operationId: listTenants
+      summary: Google Cloud Talent Solution List tenants
+      description: Lists all tenants associated with the project.
+      tags:
+      - Tenants
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tenants:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Tenant'
+    post:
+      operationId: createTenant
+      summary: Google Cloud Talent Solution Create a tenant
+      description: Creates a new tenant within the project.
+      tags:
+      - Tenants
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tenant'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+  /projects/{projectId}/tenants/{tenantId}:
+    get:
+      operationId: getTenant
+      summary: Google Cloud Talent Solution Get a tenant
+      description: Retrieves a specific tenant by ID.
+      tags:
+      - Tenants
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+    delete:
+      operationId: deleteTenant
+      summary: Google Cloud Talent Solution Delete a tenant
+      description: Deletes a specific tenant.
+      tags:
+      - Tenants
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+components:
+  schemas:
+    Tenant:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the tenant.
+        externalId:
+          type: string
+          description: Client-side tenant identifier.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/jobs: Manage job listings
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

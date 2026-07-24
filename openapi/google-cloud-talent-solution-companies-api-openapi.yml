@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Talent Solution Companies API
+  description: The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications powered by machine learning.
+  version: 4.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/solutions/talent-solution
+servers:
+- url: https://jobs.googleapis.com/v4
+  description: Google Cloud Talent Solution Production
+tags:
+- name: Companies
+paths:
+  /projects/{projectId}/tenants/{tenantId}/companies:
+    get:
+      operationId: listCompanies
+      summary: Google Cloud Talent Solution List companies
+      description: Lists all companies associated with a tenant.
+      tags:
+      - Companies
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  companies:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Company'
+    post:
+      operationId: createCompany
+      summary: Google Cloud Talent Solution Create a company
+      description: Creates a new company within a tenant.
+      tags:
+      - Companies
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+components:
+  schemas:
+    Company:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the company.
+        displayName:
+          type: string
+          description: Display name of the company.
+        externalId:
+          type: string
+          description: Client-side company identifier.
+        headquartersAddress:
+          type: string
+          description: Street address of the company headquarters.
+        websiteUri:
+          type: string
+          description: URI of the company website.
+        size:
+          type: string
+          enum:
+          - COMPANY_SIZE_UNSPECIFIED
+          - MINI
+          - SMALL
+          - SMEDIUM
+          - MEDIUM
+          - BIG
+          - BIGGER
+          - GIANT
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/jobs: Manage job listings
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
