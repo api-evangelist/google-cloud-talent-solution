@@ -3,7 +3,20 @@ description: >-
   Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning to
   match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and
   intelligent job recommendations for enterprises and job boards.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-talent-solution.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -16,24 +29,48 @@ tags:
   - Search
   - Talent
 apis:
-  - name: Google Cloud Talent Solution API
-    description: >-
-      The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant
-      administration for building intelligent talent acquisition applications.
-    humanURL: https://cloud.google.com/solutions/talent-solution
-    baseURL: https://jobs.googleapis.com
-    tags:
-      - Jobs
-      - Recruitment
-      - Search
-      - Talent
-    properties:
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: JSONSchema
-        url: json-schema/job.json
-      - type: JSONLDContext
-        url: json-ld/context.jsonld
+- aid: google-cloud-talent-solution:google-cloud-talent-solution-companies-api
+  name: Google Cloud Talent Solution Companies API
+  description: The Companies API from Google Cloud Talent Solution — 1 operation(s) for companies.
+  humanURL: https://cloud.google.com/solutions/talent-solution
+  baseURL: https://jobs.googleapis.com
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-talent-solution-companies-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/job.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-talent-solution:google-cloud-talent-solution-jobs-api
+  name: Google Cloud Talent Solution Jobs API
+  description: The Jobs API from Google Cloud Talent Solution — 3 operation(s) for jobs.
+  humanURL: https://cloud.google.com/solutions/talent-solution
+  baseURL: https://jobs.googleapis.com
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-talent-solution-jobs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/job.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-talent-solution:google-cloud-talent-solution-tenants-api
+  name: Google Cloud Talent Solution Tenants API
+  description: The Tenants API from Google Cloud Talent Solution — 2 operation(s) for tenants.
+  humanURL: https://cloud.google.com/solutions/talent-solution
+  baseURL: https://jobs.googleapis.com
+  tags:
+  - Tenants
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-talent-solution-tenants-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/job.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/google-cloud-talent-solution-agentic-access.yml
