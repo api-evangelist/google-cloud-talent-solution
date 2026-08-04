@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-talent-solution",
+  "sources": [
+    "google-cloud-talent-solution-companies-api-openapi.yml",
+    "google-cloud-talent-solution-jobs-api-openapi.yml",
+    "google-cloud-talent-solution-tenants-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-talent-solution-companies-api-openapi.yml",
+    "google-cloud-talent-solution-jobs-api-openapi.yml",
+    "google-cloud-talent-solution-tenants-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
