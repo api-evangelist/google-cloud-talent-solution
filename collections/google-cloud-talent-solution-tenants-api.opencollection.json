@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Talent Solution Companies Tenants API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tenants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Talent Solution List tenants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://jobs.googleapis.com/v4/projects/:projectId/tenants",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all tenants associated with the project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Talent Solution Create a tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://jobs.googleapis.com/v4/projects/:projectId/tenants",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new tenant within the project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Talent Solution Get a tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://jobs.googleapis.com/v4/projects/:projectId/tenants/:tenantId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific tenant by ID."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Talent Solution Delete a tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://jobs.googleapis.com/v4/projects/:projectId/tenants/:tenantId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific tenant."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

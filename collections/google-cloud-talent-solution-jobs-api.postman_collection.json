@@ -1,0 +1,779 @@
+{
+  "item": [
+    {
+      "id": "9d04543a-4a73-44ff-8f87-d132209887c4",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8d64f3f6-6b9c-4719-8cb5-1ecda360cb10",
+          "name": "Google Cloud Talent Solution List jobs",
+          "request": {
+            "name": "Google Cloud Talent Solution List jobs",
+            "description": {
+              "content": "Lists jobs within a tenant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89ee1b9b-c86e-41de-9ec5-932021bd7615",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"name\": \"string\",\n      \"company\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"addresses\": [\n        \"string\",\n        \"string\"\n      ],\n      \"employmentTypes\": [\n        \"PART_TIME\",\n        \"INTERN\"\n      ],\n      \"compensationInfo\": {\n        \"entries\": [\n          {\n            \"type\": \"string\",\n            \"unit\": \"string\",\n            \"amount\": {\n              \"currencyCode\": \"string\",\n              \"units\": \"string\"\n            }\n          },\n          {\n            \"type\": \"string\",\n            \"unit\": \"string\",\n            \"amount\": {\n              \"currencyCode\": \"string\",\n              \"units\": \"string\"\n            }\n          }\n        ]\n      },\n      \"postingExpireTime\": \"2000-10-05T21:18:50.538Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"company\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"addresses\": [\n        \"string\",\n        \"string\"\n      ],\n      \"employmentTypes\": [\n        \"PER_DIEM\",\n        \"FULL_TIME\"\n      ],\n      \"compensationInfo\": {\n        \"entries\": [\n          {\n            \"type\": \"string\",\n            \"unit\": \"string\",\n            \"amount\": {\n              \"currencyCode\": \"string\",\n              \"units\": \"string\"\n            }\n          },\n          {\n            \"type\": \"string\",\n            \"unit\": \"string\",\n            \"amount\": {\n              \"currencyCode\": \"string\",\n              \"units\": \"string\"\n            }\n          }\n        ]\n      },\n      \"postingExpireTime\": \"1973-02-03T08:18:47.305Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "614955bb-9a4b-4790-a811-7c95130426c3",
+          "name": "Google Cloud Talent Solution Create a job",
+          "request": {
+            "name": "Google Cloud Talent Solution Create a job",
+            "description": {
+              "content": "Creates a new job posting within a tenant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"company\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"employmentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0d417adc-1841-490b-a091-27671360523e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"company\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"employmentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"company\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"addresses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"employmentTypes\": [\n    \"PART_TIME\",\n    \"CONTRACTOR\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      },\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"1998-11-14T12:46:49.247Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1da34332-f274-4a9b-94d5-d5f4eef073b9",
+          "name": "Google Cloud Talent Solution Get a job",
+          "request": {
+            "name": "Google Cloud Talent Solution Get a job",
+            "description": {
+              "content": "Retrieves a specific job posting by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdf2d45c-78e8-4c5c-9a8c-7ac3a3f3c8ef",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"company\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"addresses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"employmentTypes\": [\n    \"PART_TIME\",\n    \"CONTRACTOR\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      },\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"1998-11-14T12:46:49.247Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4e3738e-53ec-49c7-9f6a-11bbf9665d5a",
+          "name": "Google Cloud Talent Solution Update a job",
+          "request": {
+            "name": "Google Cloud Talent Solution Update a job",
+            "description": {
+              "content": "Updates an existing job posting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"company\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"employmentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "12b908da-f3aa-4ad7-b8d5-680b448d1300",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"company\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"employmentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"amount\": {\n          \"currencyCode\": \"<string>\",\n          \"units\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"company\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"addresses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"employmentTypes\": [\n    \"PART_TIME\",\n    \"CONTRACTOR\"\n  ],\n  \"compensationInfo\": {\n    \"entries\": [\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      },\n      {\n        \"type\": \"string\",\n        \"unit\": \"string\",\n        \"amount\": {\n          \"currencyCode\": \"string\",\n          \"units\": \"string\"\n        }\n      }\n    ]\n  },\n  \"postingExpireTime\": \"1998-11-14T12:46:49.247Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9892b842-7d89-4f9e-9e39-997a1334071d",
+          "name": "Google Cloud Talent Solution Delete a job",
+          "request": {
+            "name": "Google Cloud Talent Solution Delete a job",
+            "description": {
+              "content": "Deletes a specific job posting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb6e7ca8-d2d4-4715-830a-df05a0dda073",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f783d37c-f0c5-4de7-93bb-24d4e98cfc99",
+          "name": "Google Cloud Talent Solution Search jobs",
+          "request": {
+            "name": "Google Cloud Talent Solution Search jobs",
+            "description": {
+              "content": "Searches for jobs using filters and query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "tenants",
+                ":tenantId",
+                "jobs:search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"locationFilters\": [\n    {\n      \"address\": \"<string>\",\n      \"distanceInMiles\": \"<number>\"\n    },\n    {\n      \"address\": \"<string>\",\n      \"distanceInMiles\": \"<number>\"\n    }\n  ],\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1bba7abc-bef9-42c0-99fa-f53054a0ad4d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "tenants",
+                    ":tenantId",
+                    "jobs:search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"locationFilters\": [\n    {\n      \"address\": \"<string>\",\n      \"distanceInMiles\": \"<number>\"\n    },\n    {\n      \"address\": \"<string>\",\n      \"distanceInMiles\": \"<number>\"\n    }\n  ],\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"matchingJobs\": [\n    {\n      \"job\": {\n        \"name\": \"string\",\n        \"company\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"addresses\": [\n          \"string\",\n          \"string\"\n        ],\n        \"employmentTypes\": [\n          \"PART_TIME\",\n          \"FULL_TIME\"\n        ],\n        \"compensationInfo\": {\n          \"entries\": [\n            {\n              \"type\": \"string\",\n              \"unit\": \"string\",\n              \"amount\": {\n                \"currencyCode\": \"string\",\n                \"units\": \"string\"\n              }\n            },\n            {\n              \"type\": \"string\",\n              \"unit\": \"string\",\n              \"amount\": {\n                \"currencyCode\": \"string\",\n                \"units\": \"string\"\n              }\n            }\n          ]\n        },\n        \"postingExpireTime\": \"2014-02-03T23:48:20.442Z\"\n      },\n      \"jobSummary\": \"string\"\n    },\n    {\n      \"job\": {\n        \"name\": \"string\",\n        \"company\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"addresses\": [\n          \"string\",\n          \"string\"\n        ],\n        \"employmentTypes\": [\n          \"EMPLOYMENT_TYPE_UNSPECIFIED\",\n          \"FULL_TIME\"\n        ],\n        \"compensationInfo\": {\n          \"entries\": [\n            {\n              \"type\": \"string\",\n              \"unit\": \"string\",\n              \"amount\": {\n                \"currencyCode\": \"string\",\n                \"units\": \"string\"\n              }\n            },\n            {\n              \"type\": \"string\",\n              \"unit\": \"string\",\n              \"amount\": {\n                \"currencyCode\": \"string\",\n                \"units\": \"string\"\n              }\n            }\n          ]\n        },\n        \"postingExpireTime\": \"1989-09-17T09:16:26.281Z\"\n      },\n      \"jobSummary\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://jobs.googleapis.com/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "08eb37df-091b-4cbf-931d-0c9326ed200b",
+    "name": "Google Cloud Talent Solution Companies Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications powered by machine learning.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
