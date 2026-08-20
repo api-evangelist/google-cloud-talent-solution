@@ -23,6 +23,13 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
   - Google Cloud
+  - Job
+  - Machine-Learning
+  - Recruitment
+  - Search
+  - Talent
+tags_raw:
+  - Google Cloud
   - Jobs
   - Machine Learning
   - Recruitment
@@ -49,6 +56,8 @@ apis:
   humanURL: https://cloud.google.com/solutions/talent-solution
   baseURL: https://jobs.googleapis.com
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
