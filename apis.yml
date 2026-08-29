@@ -3,6 +3,18 @@ description: >-
   Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning to
   match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and
   intelligent job recommendations for enterprises and job boards.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
