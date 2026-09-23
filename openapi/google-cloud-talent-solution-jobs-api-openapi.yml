@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Talent Solution Companies Jobs API
+  title: Google Cloud Talent Solution Jobs API
   description: The Cloud Talent Solution API provides job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications powered by machine learning.
   version: 4.0.0
   contact:
