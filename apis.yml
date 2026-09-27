@@ -36,8 +36,8 @@ specificationVersion: '0.23'
 tags:
   - Google Cloud
   - Job
-  - Machine-Learning
-  - Recruitment
+  - Machine Learning
+  - Recruiting
   - Search
   - Talent
 tags_raw:
@@ -47,6 +47,7 @@ tags_raw:
   - Recruitment
   - Search
   - Talent
+  - Machine-Learning
 apis:
 - aid: google-cloud-talent-solution:google-cloud-talent-solution-companies-api
   name: Google Cloud Talent Solution Companies API
