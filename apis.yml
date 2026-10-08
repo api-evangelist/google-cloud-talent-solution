@@ -94,6 +94,12 @@ apis:
   - type: JSONLDContext
     url: json-ld/context.jsonld
 common:
+  - type: Plans
+    url: plans/google-cloud-talent-solution-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-cloud-talent-solution-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-talent-solution-finops.yml
   - type: CapabilityMap
     url: capabilities/google-cloud-talent-solution-capability-edges.yml
     name: Google Cloud Talent Solution Business Capability Map
