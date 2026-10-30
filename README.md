@@ -1,4 +1,4 @@
-# Google Cloud Talent Solution (google-cloud-talent-solution)
+# Google Cloud Talent Solution
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,55 +66,146 @@
 
 Google Cloud Talent Solution provides a job search and talent acquisition platform that leverages machine learning to match job seekers with relevant opportunities. It offers job posting management, candidate profile search, and intelligent job recommendations for enterprises and job boards.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-talent-solution/refs/heads/main/apis.yml)
+**Areas:** Google Cloud · Job · Machine Learning · Recruiting · Search · Talent
 
-## Tags
+## Google Cloud Talent Solution on APIs.io
 
-- Google Cloud
-- Jobs
-- Machine Learning
-- Recruitment
-- Search
-- Talent
+Everything profiled for Google Cloud Talent Solution is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-talent-solution/](https://apis.io/providers/google-cloud-talent-solution/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+- [Google Cloud Talent Solution Companies API](https://apis.io/apis/google-cloud-talent-solution/google-cloud-talent-solution-companies-api/) — The Companies API from Google Cloud Talent Solution — 1 operation(s) for companies.
+- [Google Cloud Talent Solution Jobs API](https://apis.io/apis/google-cloud-talent-solution/google-cloud-talent-solution-jobs-api/) — The Jobs API from Google Cloud Talent Solution — 3 operation(s) for jobs.
+- [Google Cloud Talent Solution Tenants API](https://apis.io/apis/google-cloud-talent-solution/google-cloud-talent-solution-tenants-api/) — The Tenants API from Google Cloud Talent Solution — 2 operation(s) for tenants.
 
-## APIs
+### Published properties
 
-### Google Cloud Talent Solution API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Cloud Talent Solution API enables job search, job posting management, company profiles, and tenant administration for building intelligent talent acquisition applications.
+#### Agentic access (1)
 
-- **Human URL:** [https://cloud.google.com/solutions/talent-solution](https://cloud.google.com/solutions/talent-solution)
-- **Base URL:** `https://jobs.googleapis.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Google Cloud Talent Solution Agentic Access](https://apis.io/agentic-access/google-cloud-talent-solution/google-cloud-talent-solution-agentic-access/)
 
-- Jobs
-- Recruitment
-- Search
-- Talent
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/job.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/context.jsonld)
+- [Job](https://apis.io/schemas/google-cloud-talent-solution/job/)
 
-## Common Properties
+#### JSON-LD (1)
 
-- [GitHub Organization](https://github.com/googleapis)
-- [Getting Started](https://cloud.google.com/solutions/talent-solution/docs)
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/google-cloud-talent-solution/context/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Talent Solution Companies API](https://apis.io/collections/google-cloud-talent-solution/open-google-cloud-talent-solution-companies-api/)
+- [Google Cloud Talent Solution Companies Jobs API](https://apis.io/collections/google-cloud-talent-solution/open-google-cloud-talent-solution-jobs-api/)
+- [Google Cloud Talent Solution Companies Tenants API](https://apis.io/collections/google-cloud-talent-solution/open-google-cloud-talent-solution-tenants-api/)
+- [Google Cloud Talent Solution API](https://apis.io/collections/google-cloud-talent-solution/open-openapi/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Talent Solution — jsonschema rules](https://apis.io/rules/google-cloud-talent-solution/google-cloud-talent-solution-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Talent Solution Authentication](https://apis.io/security/google-cloud-talent-solution/google-cloud-talent-solution-authentication/)
+- [Google Cloud Talent Solution Domain Security](https://apis.io/security/google-cloud-talent-solution/google-cloud-talent-solution-domain-security/)
+- [Google Cloud Talent Solution Vulnerability Disclosure](https://apis.io/security/google-cloud-talent-solution/google-cloud-talent-solution-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Talent Solution Scopes](https://apis.io/scopes/google-cloud-talent-solution/google-cloud-talent-solution-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Talent Solution Plans Pricing](https://apis.io/plans/google-cloud-talent-solution/google-cloud-talent-solution-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Talent Solution Rate Limits](https://apis.io/rate-limits/google-cloud-talent-solution/google-cloud-talent-solution-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Talent Solution Finops](https://apis.io/finops/google-cloud-talent-solution/google-cloud-talent-solution-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://cloud.google.com/solutions/talent-solution/docs)
 - [Pricing](https://cloud.google.com/solutions/talent-solution/pricing)
-- [J S O N L D Context](json-ld/context.jsonld)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://cloud.google.com/feeds/cloud-talent-solution-release-notes.xml)
+- [GitHub](https://github.com/googleapis)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 54.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 18.4 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.0** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-talent-solution/](https://apis.io/providers/google-cloud-talent-solution/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Talent Solution: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-talent-solution/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
